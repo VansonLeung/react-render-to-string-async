@@ -1,0 +1,88 @@
+{
+  "_from": "github:VansonLeung/react-render-to-string-async#develop",
+  "_id": "react-render-to-string-async@0.0.0",
+  "_inBundle": false,
+  "_location": "/react-render-to-string-async",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "react-render-to-string-async@github:htchaan/react-render-to-string-async#develop",
+    "name": "react-render-to-string-async",
+    "escapedName": "react-render-to-string-async",
+    "rawSpec": "github:VansonLeung/react-render-to-string-async#develop",
+    "saveSpec": "github:VansonLeung/react-render-to-string-async#develop",
+    "fetchSpec": null,
+    "gitCommittish": "develop"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_spec": "react-render-to-string-async@github:VansonLeung/react-render-to-string-async#develop",
+  "author": {
+    "name": "Chan Hok-tai"
+  },
+  "bugs": {
+    "url": "https://github.com/VansonLeung/react-render-to-string-async/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "history": "^4.7.2",
+    "jsdom": "^11.4.0",
+    "jsdom-global": "^3.0.2",
+    "node-fetch": "^1.7.3"
+  },
+  "deprecated": false,
+  "description": "Render React components on server, asynchronously.",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.32",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/polyfill": "^7.0.0-beta.32",
+    "@babel/preset-env": "^7.0.0-beta.32",
+    "@babel/preset-flow": "^7.0.0-beta.32",
+    "@babel/register": "^7.0.0-beta.32",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "8.0.0-beta.0",
+    "eslint": "^4.11.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flow-header": "^0.2.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "flow-bin": "^0.59.0",
+    "flow-copy-source": "^1.2.1",
+    "flow-typed": "^2.2.3",
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.1.10",
+    "webpack": "^3.8.1"
+  },
+  "homepage": "https://github.com/VansonLeung/react-render-to-string-async#readme",
+  "keywords": [
+    "react",
+    "node",
+    "ssr",
+    "server side rendering",
+    "async"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "react-render-to-string-async",
+  "peerDependencies": {
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-helmet": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VansonLeung/react-render-to-string-async.git"
+  },
+  "scripts": {
+    "build": "npm run build:clean && npm run build:lib && npm run build:flow",
+    "build:clean": "rimraf lib",
+    "build:flow": "flow-copy-source -v src lib",
+    "build:lib": "BABEL_ENV=server babel src --out-dir lib",
+    "build:umd": "rimraf umd && webpack && uglifyjs umd/Helmet.js --beautify beautify=false,max_line_len=80 --compress --output umd/Helmet.min.js",
+    "dev": "nodemon --watch src --exec 'npm run build'",
+    "lint": "eslint --fix src; flow",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.0"
+}

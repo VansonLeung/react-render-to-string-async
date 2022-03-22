@@ -1,0 +1,51 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:flowtype/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "babel",
+    "flow-header",
+    "flowtype"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "consistent-return": [
+      "error",
+      {
+        "treatUndefinedAsUnspecified": true
+      }
+    ],
+    "flow-header/flow-header": [
+      "error"
+    ],
+    "max-len": [
+      "warn",
+      {
+        "ignoreComments": true,
+        "ignoreStrings": true
+      }
+    ],
+    "no-console": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "none"
+      }
+    ]
+  }
+}
